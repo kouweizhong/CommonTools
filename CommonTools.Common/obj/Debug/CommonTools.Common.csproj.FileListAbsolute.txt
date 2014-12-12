@@ -1,0 +1,4 @@
+E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Common\bin\Debug\CommonTools.Common.dll
+E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Common\bin\Debug\CommonTools.Common.pdb
+E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Common\obj\Debug\CommonTools.Common.dll
+E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Common\obj\Debug\CommonTools.Common.pdb
