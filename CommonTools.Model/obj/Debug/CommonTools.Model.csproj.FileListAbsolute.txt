@@ -2,3 +2,7 @@ E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTo
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTools.Model.pdb
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.dll
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTools.Model.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTools.Model.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.pdb

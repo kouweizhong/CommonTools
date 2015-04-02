@@ -8,3 +8,13 @@ E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTool
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.csprojResolveAssemblyReference.cache
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.dll
 E:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.DAL.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.DAL.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.Common.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.Model.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\System.Data.SQLite.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.Common.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\bin\Debug\CommonTools.Model.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.csprojResolveAssemblyReference.cache
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.dll
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.DAL\obj\Debug\CommonTools.DAL.pdb
