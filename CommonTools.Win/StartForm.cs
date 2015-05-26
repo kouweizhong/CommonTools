@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CommonTools.Win.Encrypte;
+using CommonTools.Win.FormFunc;
 using DevExpress.XtraSplashScreen;
 
 namespace CommonTools.Win
@@ -79,8 +79,6 @@ namespace CommonTools.Win
 
         #region 公共函数
 
-        #region 公共函数
-
         /// <summary>
         ///  显示进度条
         /// </summary>
@@ -113,9 +111,6 @@ namespace CommonTools.Win
 
         #endregion
 
-        #endregion
-
-
         /// <summary>
         ///  加解密
         /// </summary>
@@ -128,14 +123,14 @@ namespace CommonTools.Win
         }
 
         /// <summary>
-        ///  基础
+        ///  编码
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-02-26 20:04:21
         private void PicBase_Click(object sender, EventArgs e)
         {
             ShowManager(LoadingForm, "加载中......", "");
-            HideManager(LoadingForm, new EncrypteForm(), this);
+            HideManager(LoadingForm, new CodeForm(), this);
         }
 
 

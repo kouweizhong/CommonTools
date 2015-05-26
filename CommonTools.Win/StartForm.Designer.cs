@@ -56,11 +56,11 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Location = new System.Drawing.Point(92, 168);
+            this.labelControl1.Location = new System.Drawing.Point(82, 168);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(43, 16);
+            this.labelControl1.Size = new System.Drawing.Size(60, 16);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "基 础";
+            this.labelControl1.Text = "编/解码";
             // 
             // PicBase
             // 

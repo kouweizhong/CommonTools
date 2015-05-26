@@ -1,4 +1,4 @@
-﻿namespace CommonTools.Win.Encrypte
+﻿namespace CommonTools.Win.FormFunc
 {
     partial class EncrypteForm
     {
@@ -259,7 +259,7 @@
             this.PicSubmitMd5.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitMd5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitMd5.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitMd5.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitMd5.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitMd5.Name = "PicSubmitMd5";
             this.PicSubmitMd5.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitMd5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -445,7 +445,7 @@
             this.PicSubmitSha.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitSha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitSha.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitSha.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitSha.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitSha.Name = "PicSubmitSha";
             this.PicSubmitSha.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitSha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -589,7 +589,7 @@
             this.PicSubmitDes.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitDes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitDes.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitDes.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitDes.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitDes.Name = "PicSubmitDes";
             this.PicSubmitDes.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitDes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -776,7 +776,7 @@
             this.PicSubmitDes3.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitDes3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitDes3.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitDes3.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitDes3.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitDes3.Name = "PicSubmitDes3";
             this.PicSubmitDes3.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitDes3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -899,7 +899,7 @@
             this.PicSubmitRc2.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitRc2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitRc2.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitRc2.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitRc2.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitRc2.Name = "PicSubmitRc2";
             this.PicSubmitRc2.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitRc2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1022,7 +1022,7 @@
             this.PicSubmitAes.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitAes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitAes.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitAes.Location = new System.Drawing.Point(454, 339);
+            this.PicSubmitAes.Location = new System.Drawing.Point(501, 338);
             this.PicSubmitAes.Name = "PicSubmitAes";
             this.PicSubmitAes.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitAes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1191,7 +1191,7 @@
             this.PicSubmitBase64.BackColor = System.Drawing.Color.Transparent;
             this.PicSubmitBase64.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicSubmitBase64.Image = global::CommonTools.Win.Properties.Resources.google_up;
-            this.PicSubmitBase64.Location = new System.Drawing.Point(474, 465);
+            this.PicSubmitBase64.Location = new System.Drawing.Point(501, 438);
             this.PicSubmitBase64.Name = "PicSubmitBase64";
             this.PicSubmitBase64.Size = new System.Drawing.Size(64, 64);
             this.PicSubmitBase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

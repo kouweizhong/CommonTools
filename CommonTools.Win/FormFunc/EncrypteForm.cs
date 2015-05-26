@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using CommonTools.Common;
 using CommonTools.Win.Properties;
 
-namespace CommonTools.Win.Encrypte
+namespace CommonTools.Win.FormFunc
 {
     public partial class EncrypteForm : BaseForm
     {
