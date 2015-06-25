@@ -133,6 +133,17 @@ namespace CommonTools.Win
             HideManager(LoadingForm, new CodeForm(), this);
         }
 
+        /// <summary>
+        ///  基本功能
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2015-06-25 14:49:58
+        private void PicGeneral_Click(object sender, EventArgs e)
+        {
+            ShowManager(LoadingForm, "加载中......", "");
+            HideManager(LoadingForm, new GeneralForm(), this);
+        }
+
 
 
     }

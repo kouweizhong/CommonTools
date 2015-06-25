@@ -186,7 +186,7 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 21);
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 31);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMd5;
             this.xtraTabControl1.Size = new System.Drawing.Size(1160, 611);
