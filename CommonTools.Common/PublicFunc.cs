@@ -142,10 +142,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteDes(this string value, string key)
         {
-            DESCryptoServiceProvider mDesProvider = new DESCryptoServiceProvider();
-            ICryptoTransform cryptoTransform = mDesProvider.CreateEncryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return EncrypteMethod(value, cryptoTransform);
+            try
+            {
+                DESCryptoServiceProvider mDesProvider = new DESCryptoServiceProvider();
+                ICryptoTransform cryptoTransform = mDesProvider.CreateEncryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return EncrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "DES加密失败!";
+            }
         }
 
         /// <summary>
@@ -158,10 +165,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteDes(this string value, string key)
         {
-            DESCryptoServiceProvider mDesProvider = new DESCryptoServiceProvider();
-            ICryptoTransform cryptoTransform = mDesProvider.CreateDecryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return DecrypteMethod(value, cryptoTransform);
+            try
+            {
+                DESCryptoServiceProvider mDesProvider = new DESCryptoServiceProvider();
+                ICryptoTransform cryptoTransform = mDesProvider.CreateDecryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return DecrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "DES解密失败!";
+            }
         }
 
         /// <summary>
@@ -174,10 +188,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteRc2(this string value, string key)
         {
-            RC2CryptoServiceProvider mRc2Provider = new RC2CryptoServiceProvider();
-            ICryptoTransform cryptoTransform = mRc2Provider.CreateEncryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return EncrypteMethod(value, cryptoTransform);
+            try
+            {
+                RC2CryptoServiceProvider mRc2Provider = new RC2CryptoServiceProvider();
+                ICryptoTransform cryptoTransform = mRc2Provider.CreateEncryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return EncrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "RC2加密失败!";
+            }
         }
 
         /// <summary>
@@ -190,10 +211,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteRc2(this string value, string key)
         {
-            RC2CryptoServiceProvider mRc2Provider = new RC2CryptoServiceProvider();
-            ICryptoTransform cryptoTransform = mRc2Provider.CreateDecryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return DecrypteMethod(value, cryptoTransform);
+            try
+            {
+                RC2CryptoServiceProvider mRc2Provider = new RC2CryptoServiceProvider();
+                ICryptoTransform cryptoTransform = mRc2Provider.CreateDecryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return DecrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "RC2解密失败!";
+            }
         }
 
         /// <summary>
@@ -206,10 +234,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteAes(this string value, string key)
         {
-            Rijndael aes = Rijndael.Create();
-            ICryptoTransform cryptoTransform = aes.CreateEncryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return EncrypteMethod(value, cryptoTransform);
+            try
+            {
+                Rijndael aes = Rijndael.Create();
+                ICryptoTransform cryptoTransform = aes.CreateEncryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return EncrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "AES加密失败!";
+            }
         }
 
         /// <summary>
@@ -222,10 +257,17 @@ namespace CommonTools.Common
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteAes(this string value, string key)
         {
-            Rijndael aes = Rijndael.Create();
-            ICryptoTransform cryptoTransform = aes.CreateDecryptor(Encoding.Default.GetBytes(key),
-                PublicFields.MbtIv);
-            return DecrypteMethod(value, cryptoTransform);
+            try
+            {
+                Rijndael aes = Rijndael.Create();
+                ICryptoTransform cryptoTransform = aes.CreateDecryptor(Encoding.Default.GetBytes(key),
+                    PublicFields.MbtIv);
+                return DecrypteMethod(value, cryptoTransform);
+            }
+            catch (Exception)
+            {
+                return "AES解密失败!";
+            }
         }
 
         #endregion
