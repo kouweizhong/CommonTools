@@ -36,9 +36,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.PicGeneral = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.picCompress = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PicEncrypte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicGeneral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompress)).BeginInit();
             this.SuspendLayout();
             // 
             // PicEncrypte
@@ -113,11 +116,37 @@
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "基本功能";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl4.Location = new System.Drawing.Point(977, 164);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(77, 16);
+            this.labelControl4.TabIndex = 7;
+            this.labelControl4.Text = "压缩/打包";
+            // 
+            // picCompress
+            // 
+            this.picCompress.BackColor = System.Drawing.Color.Transparent;
+            this.picCompress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picCompress.Image = ((System.Drawing.Image)(resources.GetObject("picCompress.Image")));
+            this.picCompress.Location = new System.Drawing.Point(950, 30);
+            this.picCompress.Name = "picCompress";
+            this.picCompress.Size = new System.Drawing.Size(128, 128);
+            this.picCompress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picCompress.TabIndex = 6;
+            this.picCompress.TabStop = false;
+            this.picCompress.Click += new System.EventHandler(this.picCompress_Click);
+            this.picCompress.MouseEnter += new System.EventHandler(this.PicEncrypte_MouseEnter);
+            this.picCompress.MouseLeave += new System.EventHandler(this.PicEncrypte_MouseLeave);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 662);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.picCompress);
             this.Controls.Add(this.PicGeneral);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -134,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PicEncrypte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicGeneral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompress)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +177,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.PictureBox PicGeneral;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.PictureBox picCompress;
         private DevExpress.XtraSplashScreen.SplashScreenManager LoadingForm;
 
 

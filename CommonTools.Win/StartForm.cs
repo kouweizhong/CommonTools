@@ -10,8 +10,6 @@ namespace CommonTools.Win
     public partial class StartForm : BaseForm
     {
 
-
-
         public StartForm()
         {
             ApplySkin("McSkin");
@@ -142,6 +140,18 @@ namespace CommonTools.Win
         {
             ShowManager(LoadingForm, "加载中......", "");
             HideManager(LoadingForm, new GeneralForm(), this);
+        }
+
+
+        /// <summary>
+        ///  压缩/打包
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2015-07-24 15:08:26
+        private void picCompress_Click(object sender, EventArgs e)
+        {
+            ShowManager(LoadingForm, "加载中......", "");
+            HideManager(LoadingForm, new CompressForm(), this);
         }
 
 
