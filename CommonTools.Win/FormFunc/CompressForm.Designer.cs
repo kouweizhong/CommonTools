@@ -237,7 +237,8 @@
             this.CobFileCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CobFileCode.Properties.Items.AddRange(new object[] {
-            "UTF-8"});
+            "UTF-8",
+            "GB18030"});
             this.CobFileCode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.CobFileCode.Size = new System.Drawing.Size(154, 20);
             this.CobFileCode.TabIndex = 40;
@@ -338,7 +339,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit CobFileCode;
         private DevExpress.XtraEditors.SimpleButton BtnCompress;
         private System.Windows.Forms.RichTextBox RchExport;
-        private DevExpress.XtraSplashScreen.SplashScreenManager loading;
         private System.Windows.Forms.RichTextBox RchImport;
+        private DevExpress.XtraSplashScreen.SplashScreenManager loading;
     }
 }

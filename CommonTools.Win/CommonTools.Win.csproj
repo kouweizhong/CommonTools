@@ -67,6 +67,9 @@
       <HintPath>..\DLL\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.JScript" />
+    <Reference Include="Napoleon.PublicCommon">
+      <HintPath>..\DLL\Napoleon.PublicCommon.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\DLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -185,6 +188,10 @@
     <ProjectReference Include="..\CommonTools.Common\CommonTools.Common.csproj">
       <Project>{ecec16bb-1450-499b-9074-76c025ad47e3}</Project>
       <Name>CommonTools.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonTools.DAL\CommonTools.DAL.csproj">
+      <Project>{ab97a5ad-b88b-48c4-b7c1-7d4b8e66b752}</Project>
+      <Name>CommonTools.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CommonTools.Model\CommonTools.Model.csproj">
       <Project>{1586484f-6ed5-42e6-acfc-8555470711dd}</Project>

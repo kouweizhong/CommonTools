@@ -6,3 +6,4 @@ D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTo
 D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\bin\Debug\CommonTools.Model.pdb
 D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.dll
 D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.pdb
+D:\Napoleon\GitHub\通用工具\CommonTools\CommonTools.Model\obj\Debug\CommonTools.Model.csprojResolveAssemblyReference.cache

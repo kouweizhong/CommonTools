@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralForm));
             this.BtnReturn = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.XtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabCustomId = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cobSelectOrderBy = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -45,8 +45,23 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.TxtDateTime = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
+            this.TabForms = new DevExpress.XtraTab.XtraTabPage();
+            this.cobSelectColor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.TxtFormText = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtFormDesp = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtFormAttaUrl = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtFormTitle = new DevExpress.XtraEditors.TextEdit();
+            this.PicSubmitForm = new System.Windows.Forms.PictureBox();
+            this.LblFormJson = new DevExpress.XtraEditors.LabelControl();
+            this.TxtFormUrl = new DevExpress.XtraEditors.TextEdit();
+            this.LblFormUrl = new DevExpress.XtraEditors.LabelControl();
+            this.LoadingMsg = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CommonTools.Win.WaitForm1), true, true);
+            ((System.ComponentModel.ISupportInitialize)(this.XtraTabControl1)).BeginInit();
+            this.XtraTabControl1.SuspendLayout();
             this.TabCustomId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cobSelectOrderBy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicSubmitCustomId)).BeginInit();
@@ -54,6 +69,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtGuid1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtResult.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).BeginInit();
+            this.TabForms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cobSelectColor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormAttaUrl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnReturn
@@ -66,15 +89,16 @@
             this.BtnReturn.Text = "返回";
             this.BtnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
-            // xtraTabControl1
+            // XtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 31);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.TabCustomId;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1160, 611);
-            this.xtraTabControl1.TabIndex = 2;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.TabCustomId});
+            this.XtraTabControl1.Location = new System.Drawing.Point(12, 31);
+            this.XtraTabControl1.Name = "XtraTabControl1";
+            this.XtraTabControl1.SelectedTabPage = this.TabCustomId;
+            this.XtraTabControl1.Size = new System.Drawing.Size(1160, 611);
+            this.XtraTabControl1.TabIndex = 2;
+            this.XtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.TabCustomId,
+            this.TabForms});
             // 
             // TabCustomId
             // 
@@ -153,6 +177,8 @@
             this.PicSubmitCustomId.TabIndex = 12;
             this.PicSubmitCustomId.TabStop = false;
             this.PicSubmitCustomId.Click += new System.EventHandler(this.PicSubmitCustomId_Click);
+            this.PicSubmitCustomId.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseDown);
+            this.PicSubmitCustomId.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseUp);
             // 
             // TxtGuid2
             // 
@@ -226,20 +252,176 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "日期样式:";
             // 
+            // TabForms
+            // 
+            this.TabForms.Controls.Add(this.cobSelectColor);
+            this.TabForms.Controls.Add(this.TxtFormText);
+            this.TabForms.Controls.Add(this.labelControl11);
+            this.TabForms.Controls.Add(this.labelControl10);
+            this.TabForms.Controls.Add(this.TxtFormDesp);
+            this.TabForms.Controls.Add(this.labelControl9);
+            this.TabForms.Controls.Add(this.TxtFormAttaUrl);
+            this.TabForms.Controls.Add(this.labelControl8);
+            this.TabForms.Controls.Add(this.TxtFormTitle);
+            this.TabForms.Controls.Add(this.PicSubmitForm);
+            this.TabForms.Controls.Add(this.LblFormJson);
+            this.TabForms.Controls.Add(this.TxtFormUrl);
+            this.TabForms.Controls.Add(this.LblFormUrl);
+            this.TabForms.Name = "TabForms";
+            this.TabForms.Size = new System.Drawing.Size(1154, 582);
+            this.TabForms.Text = "瀑布IM推送";
+            // 
+            // cobSelectColor
+            // 
+            this.cobSelectColor.EditValue = "=====请选择颜色=====";
+            this.cobSelectColor.Location = new System.Drawing.Point(752, 184);
+            this.cobSelectColor.Name = "cobSelectColor";
+            this.cobSelectColor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cobSelectColor.Properties.Items.AddRange(new object[] {
+            "warning",
+            "info",
+            "primary",
+            "error",
+            "muted",
+            "success"});
+            this.cobSelectColor.Properties.ReadOnly = true;
+            this.cobSelectColor.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cobSelectColor.Size = new System.Drawing.Size(175, 20);
+            this.cobSelectColor.TabIndex = 85;
+            // 
+            // TxtFormText
+            // 
+            this.TxtFormText.EditValue = "";
+            this.TxtFormText.Location = new System.Drawing.Point(127, 118);
+            this.TxtFormText.Name = "TxtFormText";
+            this.TxtFormText.Size = new System.Drawing.Size(948, 20);
+            this.TxtFormText.TabIndex = 84;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl11.Location = new System.Drawing.Point(69, 114);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(40, 24);
+            this.labelControl11.TabIndex = 83;
+            this.labelControl11.Text = "文本:";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.Location = new System.Drawing.Point(666, 180);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(52, 24);
+            this.labelControl10.TabIndex = 81;
+            this.labelControl10.Text = "颜色:";
+            // 
+            // TxtFormDesp
+            // 
+            this.TxtFormDesp.EditValue = "";
+            this.TxtFormDesp.Location = new System.Drawing.Point(127, 334);
+            this.TxtFormDesp.Name = "TxtFormDesp";
+            this.TxtFormDesp.Properties.ReadOnly = true;
+            this.TxtFormDesp.Size = new System.Drawing.Size(948, 20);
+            this.TxtFormDesp.TabIndex = 80;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl9.Location = new System.Drawing.Point(69, 330);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(52, 24);
+            this.labelControl9.TabIndex = 79;
+            this.labelControl9.Text = "描述:";
+            // 
+            // TxtFormAttaUrl
+            // 
+            this.TxtFormAttaUrl.EditValue = "";
+            this.TxtFormAttaUrl.Location = new System.Drawing.Point(127, 256);
+            this.TxtFormAttaUrl.Name = "TxtFormAttaUrl";
+            this.TxtFormAttaUrl.Properties.ReadOnly = true;
+            this.TxtFormAttaUrl.Size = new System.Drawing.Size(948, 20);
+            this.TxtFormAttaUrl.TabIndex = 78;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.Location = new System.Drawing.Point(69, 252);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(52, 24);
+            this.labelControl8.TabIndex = 77;
+            this.labelControl8.Text = "链接:";
+            // 
+            // TxtFormTitle
+            // 
+            this.TxtFormTitle.EditValue = "";
+            this.TxtFormTitle.Location = new System.Drawing.Point(127, 184);
+            this.TxtFormTitle.Name = "TxtFormTitle";
+            this.TxtFormTitle.Properties.ReadOnly = true;
+            this.TxtFormTitle.Size = new System.Drawing.Size(351, 20);
+            this.TxtFormTitle.TabIndex = 76;
+            // 
+            // PicSubmitForm
+            // 
+            this.PicSubmitForm.BackColor = System.Drawing.Color.Transparent;
+            this.PicSubmitForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PicSubmitForm.Image = global::CommonTools.Win.Properties.Resources.google_up;
+            this.PicSubmitForm.Location = new System.Drawing.Point(500, 441);
+            this.PicSubmitForm.Name = "PicSubmitForm";
+            this.PicSubmitForm.Size = new System.Drawing.Size(64, 64);
+            this.PicSubmitForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PicSubmitForm.TabIndex = 75;
+            this.PicSubmitForm.TabStop = false;
+            this.PicSubmitForm.Click += new System.EventHandler(this.PicSubmitForm_Click);
+            this.PicSubmitForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseDown);
+            this.PicSubmitForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseUp);
+            // 
+            // LblFormJson
+            // 
+            this.LblFormJson.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblFormJson.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblFormJson.Location = new System.Drawing.Point(69, 180);
+            this.LblFormJson.Name = "LblFormJson";
+            this.LblFormJson.Size = new System.Drawing.Size(52, 24);
+            this.LblFormJson.TabIndex = 73;
+            this.LblFormJson.Text = "标题:";
+            // 
+            // TxtFormUrl
+            // 
+            this.TxtFormUrl.EditValue = "https://hooks.pubu.im/services/w3p3m129r33nu9q";
+            this.TxtFormUrl.Location = new System.Drawing.Point(127, 45);
+            this.TxtFormUrl.Name = "TxtFormUrl";
+            this.TxtFormUrl.Size = new System.Drawing.Size(948, 20);
+            this.TxtFormUrl.TabIndex = 5;
+            // 
+            // LblFormUrl
+            // 
+            this.LblFormUrl.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblFormUrl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblFormUrl.Location = new System.Drawing.Point(69, 42);
+            this.LblFormUrl.Name = "LblFormUrl";
+            this.LblFormUrl.Size = new System.Drawing.Size(40, 24);
+            this.LblFormUrl.TabIndex = 4;
+            this.LblFormUrl.Text = "地址:";
+            // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 662);
             this.Controls.Add(this.BtnReturn);
-            this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.XtraTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GeneralForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "基本功能";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneralForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.XtraTabControl1)).EndInit();
+            this.XtraTabControl1.ResumeLayout(false);
             this.TabCustomId.ResumeLayout(false);
             this.TabCustomId.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cobSelectOrderBy.Properties)).EndInit();
@@ -248,6 +430,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtGuid1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtResult.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).EndInit();
+            this.TabForms.ResumeLayout(false);
+            this.TabForms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cobSelectColor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormAttaUrl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +446,7 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton BtnReturn;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabControl XtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage TabCustomId;
         private System.Windows.Forms.PictureBox PicSubmitCustomId;
         private DevExpress.XtraEditors.TextEdit TxtGuid2;
@@ -270,5 +461,20 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cobSelectOrderBy;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraTab.XtraTabPage TabForms;
+        private DevExpress.XtraEditors.TextEdit TxtFormUrl;
+        private DevExpress.XtraEditors.LabelControl LblFormUrl;
+        private DevExpress.XtraEditors.LabelControl LblFormJson;
+        private System.Windows.Forms.PictureBox PicSubmitForm;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit TxtFormDesp;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit TxtFormAttaUrl;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit TxtFormTitle;
+        private DevExpress.XtraEditors.TextEdit TxtFormText;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.ComboBoxEdit cobSelectColor;
+        private DevExpress.XtraSplashScreen.SplashScreenManager LoadingMsg;
     }
 }
