@@ -46,20 +46,18 @@
             this.TxtDateTime = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.TabForms = new DevExpress.XtraTab.XtraTabPage();
-            this.cobSelectColor = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TxtFormText = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.TxtFormDesp = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtFormAttaUrl = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TxtFormTitle = new DevExpress.XtraEditors.TextEdit();
             this.PicSubmitForm = new System.Windows.Forms.PictureBox();
             this.LblFormJson = new DevExpress.XtraEditors.LabelControl();
             this.TxtFormUrl = new DevExpress.XtraEditors.TextEdit();
             this.LblFormUrl = new DevExpress.XtraEditors.LabelControl();
             this.LoadingMsg = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CommonTools.Win.WaitForm1), true, true);
+            this.colSelect = new DevExpress.XtraEditors.ColorPickEdit();
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabControl1)).BeginInit();
             this.XtraTabControl1.SuspendLayout();
             this.TabCustomId.SuspendLayout();
@@ -70,13 +68,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtResult.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).BeginInit();
             this.TabForms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cobSelectColor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtFormAttaUrl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnReturn
@@ -254,14 +251,12 @@
             // 
             // TabForms
             // 
-            this.TabForms.Controls.Add(this.cobSelectColor);
+            this.TabForms.Controls.Add(this.colSelect);
             this.TabForms.Controls.Add(this.TxtFormText);
             this.TabForms.Controls.Add(this.labelControl11);
             this.TabForms.Controls.Add(this.labelControl10);
             this.TabForms.Controls.Add(this.TxtFormDesp);
             this.TabForms.Controls.Add(this.labelControl9);
-            this.TabForms.Controls.Add(this.TxtFormAttaUrl);
-            this.TabForms.Controls.Add(this.labelControl8);
             this.TabForms.Controls.Add(this.TxtFormTitle);
             this.TabForms.Controls.Add(this.PicSubmitForm);
             this.TabForms.Controls.Add(this.LblFormJson);
@@ -269,31 +264,12 @@
             this.TabForms.Controls.Add(this.LblFormUrl);
             this.TabForms.Name = "TabForms";
             this.TabForms.Size = new System.Drawing.Size(1154, 582);
-            this.TabForms.Text = "瀑布IM推送";
-            // 
-            // cobSelectColor
-            // 
-            this.cobSelectColor.EditValue = "=====请选择颜色=====";
-            this.cobSelectColor.Location = new System.Drawing.Point(752, 184);
-            this.cobSelectColor.Name = "cobSelectColor";
-            this.cobSelectColor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cobSelectColor.Properties.Items.AddRange(new object[] {
-            "warning",
-            "info",
-            "primary",
-            "error",
-            "muted",
-            "success"});
-            this.cobSelectColor.Properties.ReadOnly = true;
-            this.cobSelectColor.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cobSelectColor.Size = new System.Drawing.Size(175, 20);
-            this.cobSelectColor.TabIndex = 85;
+            this.TabForms.Text = "BearyChat推送";
             // 
             // TxtFormText
             // 
             this.TxtFormText.EditValue = "";
-            this.TxtFormText.Location = new System.Drawing.Point(127, 118);
+            this.TxtFormText.Location = new System.Drawing.Point(127, 136);
             this.TxtFormText.Name = "TxtFormText";
             this.TxtFormText.Size = new System.Drawing.Size(948, 20);
             this.TxtFormText.TabIndex = 84;
@@ -302,7 +278,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(69, 114);
+            this.labelControl11.Location = new System.Drawing.Point(69, 132);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(40, 24);
             this.labelControl11.TabIndex = 83;
@@ -312,7 +288,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(666, 180);
+            this.labelControl10.Location = new System.Drawing.Point(665, 227);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(52, 24);
             this.labelControl10.TabIndex = 81;
@@ -323,7 +299,6 @@
             this.TxtFormDesp.EditValue = "";
             this.TxtFormDesp.Location = new System.Drawing.Point(127, 334);
             this.TxtFormDesp.Name = "TxtFormDesp";
-            this.TxtFormDesp.Properties.ReadOnly = true;
             this.TxtFormDesp.Size = new System.Drawing.Size(948, 20);
             this.TxtFormDesp.TabIndex = 80;
             // 
@@ -337,31 +312,11 @@
             this.labelControl9.TabIndex = 79;
             this.labelControl9.Text = "描述:";
             // 
-            // TxtFormAttaUrl
-            // 
-            this.TxtFormAttaUrl.EditValue = "";
-            this.TxtFormAttaUrl.Location = new System.Drawing.Point(127, 256);
-            this.TxtFormAttaUrl.Name = "TxtFormAttaUrl";
-            this.TxtFormAttaUrl.Properties.ReadOnly = true;
-            this.TxtFormAttaUrl.Size = new System.Drawing.Size(948, 20);
-            this.TxtFormAttaUrl.TabIndex = 78;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
-            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(69, 252);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(52, 24);
-            this.labelControl8.TabIndex = 77;
-            this.labelControl8.Text = "链接:";
-            // 
             // TxtFormTitle
             // 
             this.TxtFormTitle.EditValue = "";
-            this.TxtFormTitle.Location = new System.Drawing.Point(127, 184);
+            this.TxtFormTitle.Location = new System.Drawing.Point(127, 230);
             this.TxtFormTitle.Name = "TxtFormTitle";
-            this.TxtFormTitle.Properties.ReadOnly = true;
             this.TxtFormTitle.Size = new System.Drawing.Size(351, 20);
             this.TxtFormTitle.TabIndex = 76;
             // 
@@ -384,7 +339,7 @@
             // 
             this.LblFormJson.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.LblFormJson.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LblFormJson.Location = new System.Drawing.Point(69, 180);
+            this.LblFormJson.Location = new System.Drawing.Point(68, 227);
             this.LblFormJson.Name = "LblFormJson";
             this.LblFormJson.Size = new System.Drawing.Size(52, 24);
             this.LblFormJson.TabIndex = 73;
@@ -392,7 +347,7 @@
             // 
             // TxtFormUrl
             // 
-            this.TxtFormUrl.EditValue = "https://hooks.pubu.im/services/w3p3m129r33nu9q";
+            this.TxtFormUrl.EditValue = "https://hook.bearychat.com/=bw7GT/incoming/ab8cec4f43c2707e535b75450063ab49";
             this.TxtFormUrl.Location = new System.Drawing.Point(127, 45);
             this.TxtFormUrl.Name = "TxtFormUrl";
             this.TxtFormUrl.Size = new System.Drawing.Size(948, 20);
@@ -407,6 +362,16 @@
             this.LblFormUrl.Size = new System.Drawing.Size(40, 24);
             this.LblFormUrl.TabIndex = 4;
             this.LblFormUrl.Text = "地址:";
+            // 
+            // colSelect
+            // 
+            this.colSelect.EditValue = System.Drawing.Color.Empty;
+            this.colSelect.Location = new System.Drawing.Point(743, 230);
+            this.colSelect.Name = "colSelect";
+            this.colSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colSelect.Size = new System.Drawing.Size(111, 20);
+            this.colSelect.TabIndex = 85;
             // 
             // GeneralForm
             // 
@@ -432,13 +397,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).EndInit();
             this.TabForms.ResumeLayout(false);
             this.TabForms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cobSelectColor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtFormAttaUrl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,12 +433,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit TxtFormDesp;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit TxtFormAttaUrl;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit TxtFormTitle;
         private DevExpress.XtraEditors.TextEdit TxtFormText;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.ComboBoxEdit cobSelectColor;
+        private DevExpress.XtraEditors.ColorPickEdit colSelect;
         private DevExpress.XtraSplashScreen.SplashScreenManager LoadingMsg;
     }
 }

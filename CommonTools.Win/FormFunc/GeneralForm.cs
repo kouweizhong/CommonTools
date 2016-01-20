@@ -161,26 +161,24 @@ namespace CommonTools.Win.FormFunc
         /// Created : 2016-01-18 16:26:29
         private void PicSubmitForm_Click(object sender, EventArgs e)
         {
-            string url = TxtFormUrl.Text, text = TxtFormText.Text, results, msg = "";
+            string url = TxtFormUrl.Text, text = TxtFormText.Text, results, msg = "", title = TxtFormTitle.Text, dep = TxtFormDesp.Text, color = colSelect.Color.Name;
             if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(text))
             {
                 MessageBox.Show("请填写提交表单的详细信息!");
                 return;
             }
-            ShowManager(LoadingMsg,"正在推送中...","");
-            var json = JsonConvert.SerializeObject(new
+            ShowManager(LoadingMsg, "正在推送中...", "");
+            var json = "{\"text\":\"" + text + "\"";
+            if (!string.IsNullOrEmpty(title) || !string.IsNullOrEmpty(dep))
             {
-                text,
-                displayUser = new
-                {
-                    name = "瀑布IM"
-                }
-            });
+                json += "\"attachments\":[{\"title\":\"" + title + "\",\"text\":\"" + dep + "\",\"color\":\"#" + color + "\"}]";
+            }
+            json += "}";
             try
             {
-                results = url.RequestUpDownData(json, HttpMethod.Post);
+                results = url.PostJsonData(json, contentType: ContentTypes.JsonType);
                 var objects = (JObject)JsonConvert.DeserializeObject(results);
-                if (objects["error"].ToString().Equals("0"))
+                if ((objects["code"].ToString().Equals("0")))
                 {
                     msg = "推送成功!";
                 }
