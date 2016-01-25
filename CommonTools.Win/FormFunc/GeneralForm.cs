@@ -7,6 +7,9 @@ using DevExpress.XtraSplashScreen;
 using Napoleon.PublicCommon.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 namespace CommonTools.Win.FormFunc
 {
@@ -19,7 +22,7 @@ namespace CommonTools.Win.FormFunc
         }
 
         /// <summary>
-        ///     返回
+        ///  返回
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-06-25 14:33:15
@@ -31,7 +34,7 @@ namespace CommonTools.Win.FormFunc
         }
 
         /// <summary>
-        ///     关闭页面
+        ///  关闭页面
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-06-25 14:32:57
@@ -155,13 +158,13 @@ namespace CommonTools.Win.FormFunc
         }
 
         /// <summary>
-        ///     表单提交
+        ///  表单提交
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2016-01-18 16:26:29
         private void PicSubmitForm_Click(object sender, EventArgs e)
         {
-            string url = TxtFormUrl.Text, text = TxtFormText.Text, results, msg = "", title = TxtFormTitle.Text, dep = TxtFormDesp.Text, color = colSelect.Color.Name;
+            string url = TxtFormUrl.Text, text = TxtFormText.Text, results, msg, title = TxtFormTitle.Text, dep = TxtFormDesp.Text, color = colSelect.Color.Name;
             if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(text))
             {
                 MessageBox.Show("请填写提交表单的详细信息!");
@@ -193,6 +196,128 @@ namespace CommonTools.Win.FormFunc
             }
             HideManager(LoadingMsg);
             MessageBox.Show(msg);
+        }
+
+        /// <summary>
+        ///  生成一维码
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-25 14:19:01
+        private void BtnCreateCode1_Click(object sender, EventArgs e)
+        {
+            //设置条形码规格
+            EncodingOptions encodeOption = new EncodingOptions();
+            encodeOption.Height = 150;//必须制定高度、宽度
+            encodeOption.Width = 250;
+            BarcodeWriter wr = new BarcodeWriter();
+            wr.Options = encodeOption;
+            wr.Format = BarcodeFormat.CODE_39;//EAN13表示有校验规则的13位数字,CODE_39表示无规则的
+            Bitmap img = wr.Write(TxtCode.Text);
+            PicCode.Image = img;
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            {
+                string filePath = TxtImgUrl.Text + "\\" + TxtCode.Text + ".jpg";
+                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                MessageBox.Show("一维码已经生成并保存成功!");
+            }
+        }
+
+        /// <summary>
+        ///  生成二维码
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-25 14:48:21
+        private void BtnCreateCode2_Click(object sender, EventArgs e)
+        {
+            //设置QR二维码的规格
+            QrCodeEncodingOptions qrEncodeOption = new QrCodeEncodingOptions();
+            qrEncodeOption.CharacterSet = "UTF-8"; // 设置编码格式，否则读取'中文'乱码
+            qrEncodeOption.Height = 200;
+            qrEncodeOption.Width = 200;
+            qrEncodeOption.Margin = 1; //设置周围空白边距
+            BarcodeWriter wr = new BarcodeWriter();
+            wr.Format = BarcodeFormat.QR_CODE; // 二维码
+            wr.Options = qrEncodeOption;
+            Bitmap img = wr.Write(TxtCode.Text);
+            PicCode.Image = img;
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            {
+                string filePath = TxtImgUrl.Text + "\\QR-" + TxtCode.Text + ".jpg";
+                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                MessageBox.Show("二维码已经生成并保存成功!");
+            }
+        }
+
+        /// <summary>
+        ///  选择保存图片的地址
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-25 14:51:59
+        private void BtnLoadImg_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            folder.Description = "选择图片保存路径";
+            folder.ShowDialog();
+            TxtImgUrl.Text = folder.SelectedPath;
+        }
+
+        /// <summary>
+        ///  选择Logo图片
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-25 14:52:19
+        private void BtnLoadLogo_Click(object sender, EventArgs e)
+        {
+            FileDialog file = new OpenFileDialog();
+            file.Filter = "图片|*.jpg;*.png;*.gif";
+            file.Title = "选择logo";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                TxtLogoUrl.Text = file.FileName;
+            }
+        }
+
+        /// <summary>
+        ///  生成带logo的二维码
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-25 14:52:32
+        private void BtnCreateLogoCode2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtLogoUrl.Text))
+            {
+                MessageBox.Show("请选择logo图片!");
+                return;
+            }
+            //设置QR二维码的规格
+            QrCodeEncodingOptions qrEncodeOption = new QrCodeEncodingOptions();
+            qrEncodeOption.CharacterSet = "UTF-8"; // 设置编码格式，否则读取'中文'乱码
+            qrEncodeOption.Height = 200;
+            qrEncodeOption.Width = 200;
+            qrEncodeOption.Margin = 1; //设置周围空白边距
+            BarcodeWriter wr = new BarcodeWriter();
+            wr.Format = BarcodeFormat.QR_CODE; // 二维码
+            wr.Options = qrEncodeOption;
+            Bitmap img = wr.Write(TxtCode.Text);
+            //在二维码的Bitmap对象上绘制logo图片
+            Bitmap logoImg = Bitmap.FromFile(TxtLogoUrl.Text) as Bitmap;
+            if (logoImg != null)
+            {
+                Graphics g = Graphics.FromImage(img);
+                Rectangle logoRec = new Rectangle(); // 设置logo图片的大小和绘制位置
+                logoRec.Width = img.Width / 6;
+                logoRec.Height = img.Height / 6;
+                logoRec.X = img.Width / 2 - logoRec.Width / 2; // 中心点
+                logoRec.Y = img.Height / 2 - logoRec.Height / 2;
+                g.DrawImage(logoImg, logoRec);
+            }
+            PicCode.Image = img;
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            {
+                string filePath = TxtImgUrl.Text + "\\QR-" + TxtCode.Text + ".jpg";
+                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                MessageBox.Show("二维码已经生成并保存成功!");
+            }
         }
     }
 }

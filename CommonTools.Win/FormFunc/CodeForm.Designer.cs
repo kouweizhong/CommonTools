@@ -70,6 +70,8 @@
             this.PicSubmitCode.TabIndex = 13;
             this.PicSubmitCode.TabStop = false;
             this.PicSubmitCode.Click += new System.EventHandler(this.PicSubmitCode_Click);
+            this.PicSubmitCode.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseDown);
+            this.PicSubmitCode.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseUp);
             // 
             // memoEncode
             // 
@@ -135,6 +137,7 @@
             "UTF8",
             "UTF7",
             "ASCII",
+            "Base64",
             "Unicode",
             "escape",
             "encodeURI",

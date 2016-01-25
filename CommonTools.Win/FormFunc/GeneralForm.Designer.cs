@@ -46,6 +46,7 @@
             this.TxtDateTime = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.TabForms = new DevExpress.XtraTab.XtraTabPage();
+            this.colSelect = new DevExpress.XtraEditors.ColorPickEdit();
             this.TxtFormText = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -56,8 +57,21 @@
             this.LblFormJson = new DevExpress.XtraEditors.LabelControl();
             this.TxtFormUrl = new DevExpress.XtraEditors.TextEdit();
             this.LblFormUrl = new DevExpress.XtraEditors.LabelControl();
+            this.TabCode = new DevExpress.XtraTab.XtraTabPage();
+            this.PicCode = new DevExpress.XtraEditors.PictureEdit();
+            this.LblPicCode = new DevExpress.XtraEditors.LabelControl();
+            this.BtnCreateLogoCode2 = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtLogoUrl = new DevExpress.XtraEditors.TextEdit();
+            this.LblLogoUrl = new DevExpress.XtraEditors.LabelControl();
+            this.BtnLoadLogo = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnLoadImg = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnCreateCode2 = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnCreateCode1 = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtImgUrl = new DevExpress.XtraEditors.TextEdit();
+            this.LblImgUrl = new DevExpress.XtraEditors.LabelControl();
+            this.LblCode = new DevExpress.XtraEditors.LabelControl();
+            this.TxtCode = new DevExpress.XtraEditors.MemoEdit();
             this.LoadingMsg = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CommonTools.Win.WaitForm1), true, true);
-            this.colSelect = new DevExpress.XtraEditors.ColorPickEdit();
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabControl1)).BeginInit();
             this.XtraTabControl1.SuspendLayout();
             this.TabCustomId.SuspendLayout();
@@ -68,12 +82,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtResult.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).BeginInit();
             this.TabForms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).BeginInit();
+            this.TabCode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtLogoUrl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImgUrl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnReturn
@@ -95,7 +114,8 @@
             this.XtraTabControl1.TabIndex = 2;
             this.XtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabCustomId,
-            this.TabForms});
+            this.TabForms,
+            this.TabCode});
             // 
             // TabCustomId
             // 
@@ -266,6 +286,16 @@
             this.TabForms.Size = new System.Drawing.Size(1154, 582);
             this.TabForms.Text = "BearyChat推送";
             // 
+            // colSelect
+            // 
+            this.colSelect.EditValue = System.Drawing.Color.Empty;
+            this.colSelect.Location = new System.Drawing.Point(743, 230);
+            this.colSelect.Name = "colSelect";
+            this.colSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colSelect.Size = new System.Drawing.Size(111, 20);
+            this.colSelect.TabIndex = 85;
+            // 
             // TxtFormText
             // 
             this.TxtFormText.EditValue = "";
@@ -363,15 +393,150 @@
             this.LblFormUrl.TabIndex = 4;
             this.LblFormUrl.Text = "地址:";
             // 
-            // colSelect
+            // TabCode
             // 
-            this.colSelect.EditValue = System.Drawing.Color.Empty;
-            this.colSelect.Location = new System.Drawing.Point(743, 230);
-            this.colSelect.Name = "colSelect";
-            this.colSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.colSelect.Size = new System.Drawing.Size(111, 20);
-            this.colSelect.TabIndex = 85;
+            this.TabCode.Controls.Add(this.PicCode);
+            this.TabCode.Controls.Add(this.LblPicCode);
+            this.TabCode.Controls.Add(this.BtnCreateLogoCode2);
+            this.TabCode.Controls.Add(this.TxtLogoUrl);
+            this.TabCode.Controls.Add(this.LblLogoUrl);
+            this.TabCode.Controls.Add(this.BtnLoadLogo);
+            this.TabCode.Controls.Add(this.BtnLoadImg);
+            this.TabCode.Controls.Add(this.BtnCreateCode2);
+            this.TabCode.Controls.Add(this.BtnCreateCode1);
+            this.TabCode.Controls.Add(this.TxtImgUrl);
+            this.TabCode.Controls.Add(this.LblImgUrl);
+            this.TabCode.Controls.Add(this.LblCode);
+            this.TabCode.Controls.Add(this.TxtCode);
+            this.TabCode.Name = "TabCode";
+            this.TabCode.Size = new System.Drawing.Size(1154, 582);
+            this.TabCode.Text = "条形码";
+            // 
+            // PicCode
+            // 
+            this.PicCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PicCode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.PicCode.Location = new System.Drawing.Point(137, 291);
+            this.PicCode.Name = "PicCode";
+            this.PicCode.Size = new System.Drawing.Size(281, 181);
+            this.PicCode.TabIndex = 36;
+            // 
+            // LblPicCode
+            // 
+            this.LblPicCode.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblPicCode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblPicCode.Location = new System.Drawing.Point(35, 319);
+            this.LblPicCode.Name = "LblPicCode";
+            this.LblPicCode.Size = new System.Drawing.Size(87, 24);
+            this.LblPicCode.TabIndex = 35;
+            this.LblPicCode.Text = "条码图片:";
+            // 
+            // BtnCreateLogoCode2
+            // 
+            this.BtnCreateLogoCode2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCreateLogoCode2.Location = new System.Drawing.Point(955, 242);
+            this.BtnCreateLogoCode2.Name = "BtnCreateLogoCode2";
+            this.BtnCreateLogoCode2.Size = new System.Drawing.Size(118, 26);
+            this.BtnCreateLogoCode2.TabIndex = 33;
+            this.BtnCreateLogoCode2.Text = "生成带Logo二维码";
+            this.BtnCreateLogoCode2.Click += new System.EventHandler(this.BtnCreateLogoCode2_Click);
+            // 
+            // TxtLogoUrl
+            // 
+            this.TxtLogoUrl.EditValue = "";
+            this.TxtLogoUrl.Location = new System.Drawing.Point(137, 243);
+            this.TxtLogoUrl.Name = "TxtLogoUrl";
+            this.TxtLogoUrl.Properties.ReadOnly = true;
+            this.TxtLogoUrl.Size = new System.Drawing.Size(638, 20);
+            this.TxtLogoUrl.TabIndex = 32;
+            // 
+            // LblLogoUrl
+            // 
+            this.LblLogoUrl.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblLogoUrl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblLogoUrl.Location = new System.Drawing.Point(35, 239);
+            this.LblLogoUrl.Name = "LblLogoUrl";
+            this.LblLogoUrl.Size = new System.Drawing.Size(87, 24);
+            this.LblLogoUrl.TabIndex = 31;
+            this.LblLogoUrl.Text = "Logo路径:";
+            // 
+            // BtnLoadLogo
+            // 
+            this.BtnLoadLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLoadLogo.Location = new System.Drawing.Point(833, 242);
+            this.BtnLoadLogo.Name = "BtnLoadLogo";
+            this.BtnLoadLogo.Size = new System.Drawing.Size(75, 23);
+            this.BtnLoadLogo.TabIndex = 30;
+            this.BtnLoadLogo.Text = "选择Logo";
+            this.BtnLoadLogo.Click += new System.EventHandler(this.BtnLoadLogo_Click);
+            // 
+            // BtnLoadImg
+            // 
+            this.BtnLoadImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLoadImg.Location = new System.Drawing.Point(833, 192);
+            this.BtnLoadImg.Name = "BtnLoadImg";
+            this.BtnLoadImg.Size = new System.Drawing.Size(75, 23);
+            this.BtnLoadImg.TabIndex = 29;
+            this.BtnLoadImg.Text = "保存图片";
+            this.BtnLoadImg.Click += new System.EventHandler(this.BtnLoadImg_Click);
+            // 
+            // BtnCreateCode2
+            // 
+            this.BtnCreateCode2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCreateCode2.Location = new System.Drawing.Point(998, 74);
+            this.BtnCreateCode2.Name = "BtnCreateCode2";
+            this.BtnCreateCode2.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateCode2.TabIndex = 26;
+            this.BtnCreateCode2.Text = "生成二维码";
+            this.BtnCreateCode2.Click += new System.EventHandler(this.BtnCreateCode2_Click);
+            // 
+            // BtnCreateCode1
+            // 
+            this.BtnCreateCode1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCreateCode1.Location = new System.Drawing.Point(833, 74);
+            this.BtnCreateCode1.Name = "BtnCreateCode1";
+            this.BtnCreateCode1.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateCode1.TabIndex = 25;
+            this.BtnCreateCode1.Text = "生成一维码";
+            this.BtnCreateCode1.Click += new System.EventHandler(this.BtnCreateCode1_Click);
+            // 
+            // TxtImgUrl
+            // 
+            this.TxtImgUrl.EditValue = "";
+            this.TxtImgUrl.Location = new System.Drawing.Point(137, 194);
+            this.TxtImgUrl.Name = "TxtImgUrl";
+            this.TxtImgUrl.Properties.ReadOnly = true;
+            this.TxtImgUrl.Size = new System.Drawing.Size(638, 20);
+            this.TxtImgUrl.TabIndex = 9;
+            // 
+            // LblImgUrl
+            // 
+            this.LblImgUrl.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblImgUrl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblImgUrl.Location = new System.Drawing.Point(35, 190);
+            this.LblImgUrl.Name = "LblImgUrl";
+            this.LblImgUrl.Size = new System.Drawing.Size(87, 24);
+            this.LblImgUrl.TabIndex = 8;
+            this.LblImgUrl.Text = "图片路径:";
+            // 
+            // LblCode
+            // 
+            this.LblCode.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblCode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblCode.Location = new System.Drawing.Point(35, 72);
+            this.LblCode.Name = "LblCode";
+            this.LblCode.Size = new System.Drawing.Size(87, 24);
+            this.LblCode.TabIndex = 6;
+            this.LblCode.Text = "条码内容:";
+            // 
+            // TxtCode
+            // 
+            this.TxtCode.EditValue = "";
+            this.TxtCode.Location = new System.Drawing.Point(137, 28);
+            this.TxtCode.Name = "TxtCode";
+            this.TxtCode.Size = new System.Drawing.Size(638, 113);
+            this.TxtCode.TabIndex = 7;
+            this.TxtCode.UseOptimizedRendering = true;
             // 
             // GeneralForm
             // 
@@ -397,12 +562,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtDateTime.Properties)).EndInit();
             this.TabForms.ResumeLayout(false);
             this.TabForms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormDesp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicSubmitForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFormUrl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colSelect.Properties)).EndInit();
+            this.TabCode.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtLogoUrl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImgUrl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,6 +607,20 @@
         private DevExpress.XtraEditors.TextEdit TxtFormText;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.ColorPickEdit colSelect;
+        private DevExpress.XtraTab.XtraTabPage TabCode;
+        private DevExpress.XtraEditors.LabelControl LblCode;
+        private DevExpress.XtraEditors.TextEdit TxtImgUrl;
+        private DevExpress.XtraEditors.LabelControl LblImgUrl;
+        private DevExpress.XtraEditors.MemoEdit TxtCode;
+        private DevExpress.XtraEditors.SimpleButton BtnCreateCode2;
+        private DevExpress.XtraEditors.SimpleButton BtnCreateCode1;
+        private DevExpress.XtraEditors.SimpleButton BtnLoadLogo;
+        private DevExpress.XtraEditors.SimpleButton BtnLoadImg;
+        private DevExpress.XtraEditors.SimpleButton BtnCreateLogoCode2;
+        private DevExpress.XtraEditors.TextEdit TxtLogoUrl;
+        private DevExpress.XtraEditors.LabelControl LblLogoUrl;
+        private DevExpress.XtraEditors.LabelControl LblPicCode;
+        private DevExpress.XtraEditors.PictureEdit PicCode;
         private DevExpress.XtraSplashScreen.SplashScreenManager LoadingMsg;
     }
 }
