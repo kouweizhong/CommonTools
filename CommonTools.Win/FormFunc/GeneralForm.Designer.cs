@@ -72,6 +72,15 @@
             this.LblCode = new DevExpress.XtraEditors.LabelControl();
             this.TxtCode = new DevExpress.XtraEditors.MemoEdit();
             this.LoadingMsg = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CommonTools.Win.WaitForm1), true, true);
+            this.TabFileHash = new DevExpress.XtraTab.XtraTabPage();
+            this.BtnLoadFile = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtFileUrl = new DevExpress.XtraEditors.TextEdit();
+            this.LblFileUrl = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.MenoMd5 = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.MenoSha1 = new DevExpress.XtraEditors.MemoEdit();
+            this.PicCheckHash = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabControl1)).BeginInit();
             this.XtraTabControl1.SuspendLayout();
             this.TabCustomId.SuspendLayout();
@@ -93,6 +102,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtLogoUrl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImgUrl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCode.Properties)).BeginInit();
+            this.TabFileHash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFileUrl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenoMd5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenoSha1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicCheckHash)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnReturn
@@ -115,7 +129,8 @@
             this.XtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabCustomId,
             this.TabForms,
-            this.TabCode});
+            this.TabCode,
+            this.TabFileHash});
             // 
             // TabCustomId
             // 
@@ -538,6 +553,102 @@
             this.TxtCode.TabIndex = 7;
             this.TxtCode.UseOptimizedRendering = true;
             // 
+            // TabFileHash
+            // 
+            this.TabFileHash.Controls.Add(this.PicCheckHash);
+            this.TabFileHash.Controls.Add(this.labelControl13);
+            this.TabFileHash.Controls.Add(this.MenoSha1);
+            this.TabFileHash.Controls.Add(this.labelControl12);
+            this.TabFileHash.Controls.Add(this.MenoMd5);
+            this.TabFileHash.Controls.Add(this.BtnLoadFile);
+            this.TabFileHash.Controls.Add(this.TxtFileUrl);
+            this.TabFileHash.Controls.Add(this.LblFileUrl);
+            this.TabFileHash.Name = "TabFileHash";
+            this.TabFileHash.Size = new System.Drawing.Size(1154, 582);
+            this.TabFileHash.Text = "校验文件Hash";
+            // 
+            // BtnLoadFile
+            // 
+            this.BtnLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLoadFile.Location = new System.Drawing.Point(945, 46);
+            this.BtnLoadFile.Name = "BtnLoadFile";
+            this.BtnLoadFile.Size = new System.Drawing.Size(75, 23);
+            this.BtnLoadFile.TabIndex = 32;
+            this.BtnLoadFile.Text = "选择文件";
+            this.BtnLoadFile.Click += new System.EventHandler(this.BtnLoadFile_Click);
+            // 
+            // TxtFileUrl
+            // 
+            this.TxtFileUrl.EditValue = "";
+            this.TxtFileUrl.Location = new System.Drawing.Point(249, 48);
+            this.TxtFileUrl.Name = "TxtFileUrl";
+            this.TxtFileUrl.Properties.ReadOnly = true;
+            this.TxtFileUrl.Size = new System.Drawing.Size(638, 20);
+            this.TxtFileUrl.TabIndex = 31;
+            // 
+            // LblFileUrl
+            // 
+            this.LblFileUrl.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.LblFileUrl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LblFileUrl.Location = new System.Drawing.Point(147, 51);
+            this.LblFileUrl.Name = "LblFileUrl";
+            this.LblFileUrl.Size = new System.Drawing.Size(87, 24);
+            this.LblFileUrl.TabIndex = 30;
+            this.LblFileUrl.Text = "文件路径:";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl12.Location = new System.Drawing.Point(165, 159);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(78, 24);
+            this.labelControl12.TabIndex = 33;
+            this.labelControl12.Text = "MD5值:";
+            // 
+            // MenoMd5
+            // 
+            this.MenoMd5.EditValue = "";
+            this.MenoMd5.Location = new System.Drawing.Point(249, 117);
+            this.MenoMd5.Name = "MenoMd5";
+            this.MenoMd5.Size = new System.Drawing.Size(638, 113);
+            this.MenoMd5.TabIndex = 34;
+            this.MenoMd5.UseOptimizedRendering = true;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl13.Location = new System.Drawing.Point(165, 325);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(78, 24);
+            this.labelControl13.TabIndex = 35;
+            this.labelControl13.Text = "SHA1值:";
+            // 
+            // MenoSha1
+            // 
+            this.MenoSha1.EditValue = "";
+            this.MenoSha1.Location = new System.Drawing.Point(249, 284);
+            this.MenoSha1.Name = "MenoSha1";
+            this.MenoSha1.Size = new System.Drawing.Size(638, 113);
+            this.MenoSha1.TabIndex = 36;
+            this.MenoSha1.UseOptimizedRendering = true;
+            // 
+            // PicCheckHash
+            // 
+            this.PicCheckHash.BackColor = System.Drawing.Color.Transparent;
+            this.PicCheckHash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PicCheckHash.Image = global::CommonTools.Win.Properties.Resources.google_up;
+            this.PicCheckHash.Location = new System.Drawing.Point(500, 441);
+            this.PicCheckHash.Name = "PicCheckHash";
+            this.PicCheckHash.Size = new System.Drawing.Size(64, 64);
+            this.PicCheckHash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PicCheckHash.TabIndex = 76;
+            this.PicCheckHash.TabStop = false;
+            this.PicCheckHash.Click += new System.EventHandler(this.PicCheckHash_Click);
+            this.PicCheckHash.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseDown);
+            this.PicCheckHash.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicSubmitMd5_MouseUp);
+            // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -573,6 +684,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtLogoUrl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImgUrl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCode.Properties)).EndInit();
+            this.TabFileHash.ResumeLayout(false);
+            this.TabFileHash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFileUrl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenoMd5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenoSha1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicCheckHash)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,6 +738,15 @@
         private DevExpress.XtraEditors.LabelControl LblLogoUrl;
         private DevExpress.XtraEditors.LabelControl LblPicCode;
         private DevExpress.XtraEditors.PictureEdit PicCode;
+        private DevExpress.XtraTab.XtraTabPage TabFileHash;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.MemoEdit MenoSha1;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.MemoEdit MenoMd5;
+        private DevExpress.XtraEditors.SimpleButton BtnLoadFile;
+        private DevExpress.XtraEditors.TextEdit TxtFileUrl;
+        private DevExpress.XtraEditors.LabelControl LblFileUrl;
+        private System.Windows.Forms.PictureBox PicCheckHash;
         private DevExpress.XtraSplashScreen.SplashScreenManager LoadingMsg;
     }
 }

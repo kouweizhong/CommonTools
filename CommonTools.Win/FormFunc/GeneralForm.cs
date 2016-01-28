@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using CommonTools.Common;
 using CommonTools.Win.Properties;
 using DevExpress.XtraSplashScreen;
+using Napoleon.PublicCommon.Cryptography;
 using Napoleon.PublicCommon.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -115,8 +119,10 @@ namespace CommonTools.Win.FormFunc
 
         #endregion
 
+        #region 自定义主键
+
         /// <summary>
-        ///     生成自定义主键
+        ///  生成自定义主键
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-06-25 15:07:01
@@ -157,6 +163,10 @@ namespace CommonTools.Win.FormFunc
             }
         }
 
+        #endregion
+
+        #region BearyChat推送
+
         /// <summary>
         ///  表单提交
         /// </summary>
@@ -164,7 +174,13 @@ namespace CommonTools.Win.FormFunc
         /// Created : 2016-01-18 16:26:29
         private void PicSubmitForm_Click(object sender, EventArgs e)
         {
-            string url = TxtFormUrl.Text, text = TxtFormText.Text, results, msg, title = TxtFormTitle.Text, dep = TxtFormDesp.Text, color = colSelect.Color.Name;
+            string url = TxtFormUrl.Text,
+                text = TxtFormText.Text,
+                results,
+                msg,
+                title = TxtFormTitle.Text,
+                dep = TxtFormDesp.Text,
+                color = colSelect.Color.Name;
             if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(text))
             {
                 MessageBox.Show("请填写提交表单的详细信息!");
@@ -174,7 +190,8 @@ namespace CommonTools.Win.FormFunc
             var json = "{\"text\":\"" + text + "\"";
             if (!string.IsNullOrEmpty(title) || !string.IsNullOrEmpty(dep))
             {
-                json += "\"attachments\":[{\"title\":\"" + title + "\",\"text\":\"" + dep + "\",\"color\":\"#" + color + "\"}]";
+                json += "\"attachments\":[{\"title\":\"" + title + "\",\"text\":\"" + dep + "\",\"color\":\"#" + color +
+                        "\"}]";
             }
             json += "}";
             try
@@ -198,6 +215,10 @@ namespace CommonTools.Win.FormFunc
             MessageBox.Show(msg);
         }
 
+        #endregion
+
+        #region 生成条形码
+
         /// <summary>
         ///  生成一维码
         /// </summary>
@@ -207,17 +228,17 @@ namespace CommonTools.Win.FormFunc
         {
             //设置条形码规格
             EncodingOptions encodeOption = new EncodingOptions();
-            encodeOption.Height = 150;//必须制定高度、宽度
+            encodeOption.Height = 150; //必须制定高度、宽度
             encodeOption.Width = 250;
             BarcodeWriter wr = new BarcodeWriter();
             wr.Options = encodeOption;
-            wr.Format = BarcodeFormat.CODE_39;//EAN13表示有校验规则的13位数字,CODE_39表示无规则的
+            wr.Format = BarcodeFormat.CODE_39; //EAN13表示有校验规则的13位数字,CODE_39表示无规则的
             Bitmap img = wr.Write(TxtCode.Text);
             PicCode.Image = img;
-            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text)) //地址不为空的话,需要将图片生成
             {
                 string filePath = TxtImgUrl.Text + "\\" + TxtCode.Text + ".jpg";
-                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Save(filePath, ImageFormat.Jpeg);
                 MessageBox.Show("一维码已经生成并保存成功!");
             }
         }
@@ -240,10 +261,10 @@ namespace CommonTools.Win.FormFunc
             wr.Options = qrEncodeOption;
             Bitmap img = wr.Write(TxtCode.Text);
             PicCode.Image = img;
-            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text)) //地址不为空的话,需要将图片生成
             {
                 string filePath = TxtImgUrl.Text + "\\QR-" + TxtCode.Text + ".jpg";
-                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Save(filePath, ImageFormat.Jpeg);
                 MessageBox.Show("二维码已经生成并保存成功!");
             }
         }
@@ -312,12 +333,46 @@ namespace CommonTools.Win.FormFunc
                 g.DrawImage(logoImg, logoRec);
             }
             PicCode.Image = img;
-            if (!string.IsNullOrEmpty(TxtImgUrl.Text))//地址不为空的话,需要将图片生成
+            if (!string.IsNullOrEmpty(TxtImgUrl.Text)) //地址不为空的话,需要将图片生成
             {
                 string filePath = TxtImgUrl.Text + "\\QR-" + TxtCode.Text + ".jpg";
-                img.Save(filePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Save(filePath, ImageFormat.Jpeg);
                 MessageBox.Show("二维码已经生成并保存成功!");
             }
         }
+
+        #endregion
+
+        #region 校验文件的Hash
+
+        /// <summary>
+        ///  选择需要校验的文件
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-28 20:53:53
+        private void BtnLoadFile_Click(object sender, EventArgs e)
+        {
+            FileDialog file = new OpenFileDialog();
+            file.Title = "选择校验文件";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                TxtFileUrl.Text = file.FileName;
+            }
+        }
+
+        /// <summary>
+        ///  生成文件的Hash值
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2016-01-28 21:11:29
+        private void PicCheckHash_Click(object sender, EventArgs e)
+        {
+            string filename = TxtFileUrl.Text;
+            MenoMd5.Text = filename.HashFile();
+            MenoSha1.Text = filename.HashFile(HashType.Sha1);
+        }
+
+        #endregion
+
     }
 }
