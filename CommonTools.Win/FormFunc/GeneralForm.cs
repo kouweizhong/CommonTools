@@ -160,6 +160,15 @@ namespace CommonTools.Win.FormFunc
                 case 1: //Guid+日期
                     TxtResult.Text = guid + datetime;
                     break;
+                default:
+                    TxtResult.Text = datetime + guid;
+                    break;
+            }
+            if (chkFocus.Checked)//选中并复制
+            {
+                TxtResult.Focus();
+                TxtResult.SelectAll();
+                Clipboard.SetDataObject(TxtResult.Text, true);
             }
         }
 

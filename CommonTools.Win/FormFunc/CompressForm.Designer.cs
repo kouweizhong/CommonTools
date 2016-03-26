@@ -163,6 +163,8 @@
             this.ChkRename.Location = new System.Drawing.Point(173, 149);
             this.ChkRename.Name = "ChkRename";
             this.ChkRename.Properties.Caption = "是否重命名(_main)";
+            this.ChkRename.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
+            this.ChkRename.Properties.RadioGroupIndex = 1;
             this.ChkRename.Size = new System.Drawing.Size(132, 19);
             this.ChkRename.TabIndex = 32;
             // 
@@ -170,7 +172,9 @@
             // 
             this.ChkRetain.Location = new System.Drawing.Point(461, 149);
             this.ChkRetain.Name = "ChkRetain";
-            this.ChkRetain.Properties.Caption = "是否原地保存(js有效)";
+            this.ChkRetain.Properties.Caption = "是否原地保存";
+            this.ChkRetain.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
+            this.ChkRetain.Properties.RadioGroupIndex = 1;
             this.ChkRetain.Size = new System.Drawing.Size(138, 19);
             this.ChkRetain.TabIndex = 33;
             // 

@@ -82,6 +82,7 @@ namespace CommonTools.Win.FormFunc
                 return;
             }
             _beforeFiles.Clear();
+            RchImport.Clear();
             String[] filePaths;
             if ((CobFileType.SelectedIndex == 0) || (CobFileType.SelectedIndex == 1))
             {
@@ -99,9 +100,9 @@ namespace CommonTools.Win.FormFunc
                 return;
             }
             RchExport.Clear();
-            for (int i = 0; i < _beforeFiles.Count; i++)
+            foreach (var beforeFile in _beforeFiles)
             {
-                RchImport.Text += _beforeFiles[i] + Environment.NewLine;
+                RchImport.Text += beforeFile + Environment.NewLine;
             }
             FileTotal.Text = "文件总数：" + _beforeFiles.Count;
         }
@@ -161,9 +162,9 @@ namespace CommonTools.Win.FormFunc
         {
             string compressorPath = Application.StartupPath + @"\yuicompressor.jar";
             //循环压缩打包
-            for (int i = 0; i < _beforeFiles.Count; i++)
+            foreach (var beforeFile in _beforeFiles)
             {
-                string content = RunCmd(_beforeFiles[i], compressorPath);
+                string content = RunCmd(beforeFile, compressorPath);
                 ThreadFunction(content);
                 if (!content.Contains("处理完成"))//报错跳出循环
                 {
@@ -226,7 +227,7 @@ namespace CommonTools.Win.FormFunc
             filePath = fileExport + @"\" + Path.GetFileNameWithoutExtension(file) + (ChkRename.Checked ? "_min" : "") + Path.GetExtension(file);
             if (fileExtension == ".js")//js特有参数
             {
-                if (ChkConfused.Checked)
+                if (!ChkConfused.Checked)
                 {
                     jsOperation += " --nomunge ";
                 }
